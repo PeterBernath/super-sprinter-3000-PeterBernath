@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Super Sprinter 3000</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>User Story Manager</h1>
+        <form action="/add-story">
+            <input type="submit" value="Add new User Story" />
+        </form><br><br>
+        <table border="1" width="100%" align="center">
+            <tr>
+                <td>ID</td>
+                <td>Story Title</td>
+                <td>User Story</td>
+                <td>Acceptance Criteria</td>
+                <td>Business Value</td>
+                <td>Estimation</td>
+                <td>Status</td>
+                <td>Edit</td>
+                <td>Delete</td>
+            </tr>
+        {% for t in results %}
+            <tr>
+            {% for i in t %}
+                <td>{{ i }}</td>
+            {% endfor %}
+                <td><form action='/edit-story' method="post">
+                    <input type="image" src="http://icons.iconarchive.com/icons/designcontest/outline/128/Pen-2-icon.png"
+                    width="32" height="32" name="edit" value="{{ t[0] }}" /></form></td>
+                <td><form action='/delete-story' method="post">
+                    <input type="image" src="http://www.free-icons-download.net/images/empty--recycle-bin-icon-27617.png"
+                    width="32" height="32" name="bin" value="{{ t[0] }}"/></form></td>
+            </tr>
+        {% endfor %}
+        </table>
+    </body>
+</html>

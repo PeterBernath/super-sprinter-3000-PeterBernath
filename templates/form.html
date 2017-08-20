@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Super Sprinter 3000 - Add new Story</title>
+        <style> .indented { padding-left: 175pt; } </style>
+    </head>
+    <body>
+        <h2>User Story manager - Add new Story</h2>
+        <form action='/save-story' method="post">
+            <label for="1_title">Story Title</label><br>
+            <input type="text" name="1_title" size="40" id="1"><br><br>
+            <label for="2_story">User Story</label><br>
+            <textarea name="2_story" rows="5" cols="39" id="2"></textarea><br><br>
+            <label for="3_criteria">Acceptance criteria</label><br>
+            <textarea name="3_criteria" rows="5" cols="39" id="3"></textarea><br><br>
+            <label for="4_business_value">Business Value</label><br>
+            <input type="number" name="4_business_value" value="1000" min="100" max="1500" step="100" id="4"><br><br>
+            <label for="5_estimation">Estimation (h)</label><br>
+            <input type="number" name="5_estimation" value="2.5" min="0.5" max="40" step="0.5" id="5"><br><br>
+            <label for="6_status">Status</label><br>
+            <select name="6_status" id="6">
+              <option value="planning">Planning</option>
+              <option value="todo">TODO</option>
+              <option value="in_progress">In Progress</option>
+              <option value="review">Review</option>
+              <option value="done">Done</option>
+            </select><br><br><br>
+            <p class="indented"><input type="submit" id="7" value="Create" /></p>
+        </form>
+    </body>
+</html>
