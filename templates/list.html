@@ -26,9 +26,9 @@
             {% for i in t %}
                 <td>{{ i }}</td>
             {% endfor %}
-                <td><form action='/edit-story' method="post">
+                <td><form action='/story/<story_id>' method="post" story_id="{{ t[0] }}">
                     <input type="image" src="http://icons.iconarchive.com/icons/designcontest/outline/128/Pen-2-icon.png"
-                    width="32" height="32" name="edit" value="{{ t[0] }}" /></form></td>
+                    width="32" height="32" name="edit" value="{{ t[0] }}" id="{{ t[0] }}"/></form></td>
                 <td><form action='/delete-story' method="post">
                     <input type="image" src="http://www.free-icons-download.net/images/empty--recycle-bin-icon-27617.png"
                     width="32" height="32" name="bin" value="{{ t[0] }}"/></form></td>

@@ -41,8 +41,9 @@ def route_delete():
     return redirect('/')
 
 
-@app.route('/edit-story', methods=['POST'])
-def route_edit():
+@app.route('/story/<story_id>', methods=['POST'])
+def route_edit(story_id):
+    story_id = request.form['edit']
     results = load_table()
     img_id = request.form['edit']
     for row in results:
